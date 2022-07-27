@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import GlobalStyle from "./GlobalStyles";
+import { AppContext } from "./helper/Context";
+import AddBlog from "./pages/addBlog/AddBlog";
+import BlogPage from "./pages/blog/BlogPage";
+import Landing from "./pages/landing/Landing";
 
 function App() {
+  const [blogsList, setBlogsList] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider
+      value={{
+        blogsList,
+        setBlogsList,
+        selectedCategory,
+        setSelectedCategory,
+      }}
+    >
+      <div className="App">
+        <GlobalStyle />
+        <Routes>
+          <Route path="/" exact element={<Landing />} />
+          <Route path="/add-blog" exact element={<AddBlog />} />
+          <Route path="/blog/:id" exact element={<BlogPage />} />
+        </Routes>
+      </div>
+    </AppContext.Provider>
   );
 }
 
