@@ -67,7 +67,7 @@ function Landing() {
               );
             })}
         </div>
-        <Rightbar />
+        {/* <Rightbar /> */}
       </div>
     </StyledLanding>
   );

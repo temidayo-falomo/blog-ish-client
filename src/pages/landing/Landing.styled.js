@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledLanding = styled.div`
   .landing-grid {
     display: grid;
-    grid-template-columns: auto 350px;
+    grid-template-columns: auto;
     width: 95%;
     margin: 0 auto;
     margin-bottom: 3rem;
