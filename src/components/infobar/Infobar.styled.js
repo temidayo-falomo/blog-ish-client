@@ -19,7 +19,7 @@ export const StyledInfobar = styled.div`
   .bdr button {
     padding: 12px 20px;
     border-radius: 5px;
-    background-color: var(--color-brown);
+    background-color: whitesmoke;
     min-width: 110px;
     display: inline;
   }
@@ -30,7 +30,7 @@ export const StyledInfobar = styled.div`
   }
 
   .btn-active {
-    background-color: orange !important;
+    background-color: #000 !important;
     color: #fff;
   }
 

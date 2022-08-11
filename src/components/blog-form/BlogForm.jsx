@@ -62,8 +62,6 @@ function BlogForm() {
       .catch();
   };
 
-  console.log(category);
-
   return (
     <StyledBlogForm onSubmit={(e) => handleSubmit(e)}>
       <input

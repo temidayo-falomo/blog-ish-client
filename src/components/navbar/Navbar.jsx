@@ -5,19 +5,16 @@ import { StyledNavbar } from "./Navbar.styled";
 function Navbar() {
   return (
     <StyledNavbar>
-      <Link className="logo" to="/">
-        <img src="./assets/logo.svg" alt="" />
+      <a className="logo" href="https://blogish.herokuapp.com/api/blogs">
+        <button className="view-api">View API</button>
+      </a>
+
+      <Link to="/" className="company-name col center">
+        <h1>BLOGISH</h1>
       </Link>
 
-      <div className="company-name col center">
-        <h1> BLOGISH</h1>
-        <div className="row">
-          <span>April 25 2023</span>
-        </div>
-      </div>
-
       <Link to="/add-blog">
-        <button>Add Blog</button>
+        <button className="add-blog-btn">Add Blog</button>
       </Link>
     </StyledNavbar>
   );

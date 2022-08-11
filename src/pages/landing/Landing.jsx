@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import BlogCard from "../../components/blog-card/BlogCard";
 import Infobar from "../../components/infobar/Infobar";
 import Navbar from "../../components/navbar/Navbar";
-import Rightbar from "../../components/right-bar/Rightbar";
 import { StyledLanding } from "./Landing.styled";
 
 import axios from "axios";
@@ -15,25 +14,9 @@ function Landing() {
 
   let navigate = useNavigate();
 
-  const getAllBlogs = () => {
-    axios
-      .get("https://blogish.herokuapp.com/api/blogs")
-      .then((res) => {
-        setBlogsList(res.data.blogs);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   const handleNavigate = (param) => {
-    navigate(`/blog/${param}`);
+    navigate(`/${param}`);
   };
-
-  useEffect(() => {
-    getAllBlogs();
-    setSelectedCategory("All");
-  }, []);
 
   return (
     <StyledLanding>
@@ -67,7 +50,6 @@ function Landing() {
               );
             })}
         </div>
-        {/* <Rightbar /> */}
       </div>
     </StyledLanding>
   );

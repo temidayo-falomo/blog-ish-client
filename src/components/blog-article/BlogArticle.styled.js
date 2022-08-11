@@ -6,15 +6,17 @@ export const StyledBlogArticle = styled.article`
   margin: 2rem auto;
   gap: 4rem;
   min-height: 70vh;
+  flex-wrap: wrap;
 
   .blog-image {
-    width: 600px;
+    width: 500px;
     overflow: hidden;
     border-radius: 5px;
   }
 
   .full-text {
-    width: 70%;
+    width: 50%;
+    min-width: 300px;
     font-family: 'Bona Nova', sans-serif;
     gap: 1rem;
   }

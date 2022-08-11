@@ -19,11 +19,10 @@ export const StyledNavbar = styled.nav`
   }
 
   button {
-    padding: 15px 30px;
-    background-color: orange;
+    padding: 12px 25px;
+    background-color: #5466e8;
     color: var(--color-background);
     border-radius: 10px;
-    width: 120px;
   }
 
   .logo {
@@ -46,5 +45,19 @@ export const StyledNavbar = styled.nav`
 
   .company-name .row img {
     width: 80px;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+
+    .company-name h1 {
+      font-size: 1rem;
+      margin: auto;
+    }
   }
 `;
