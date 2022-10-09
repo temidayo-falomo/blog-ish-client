@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledBlogCard = styled.div`
   max-width: 400px;
-  min-height: 600px;
+  height: 600px;
   border: 1px var(--color-border) solid;
   padding: 12px;
   display: flex;
@@ -13,14 +13,18 @@ export const StyledBlogCard = styled.div`
   cursor: pointer;
 
   :hover {
-   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 
   .image {
     min-width: 100%;
-    max-height: 300px;
+    height: 300px;
+    background-color: royalblue;
     border-radius: 5px;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   .link {
@@ -30,6 +34,10 @@ export const StyledBlogCard = styled.div`
     gap: 0.3rem;
     font-family: "poppins";
     font-weight: 500;
+
+    :hover {
+      color: royalblue;
+    }
   }
 
   span {

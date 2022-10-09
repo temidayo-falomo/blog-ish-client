@@ -1,16 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import BlogCard from "../../components/blog-card/BlogCard";
 import Infobar from "../../components/infobar/Infobar";
 import Navbar from "../../components/navbar/Navbar";
 import { StyledLanding } from "./Landing.styled";
-
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../helper/Context";
 
 function Landing() {
-  const { blogsList, setBlogsList, selectedCategory, setSelectedCategory } =
-    useContext(AppContext);
+  const { blogsList, selectedCategory } = useContext(AppContext);
 
   let navigate = useNavigate();
 
@@ -38,17 +35,27 @@ function Landing() {
             })
             .slice(0)
             .reverse()
-            .map((data, index, array) => {
+            .map((data) => {
               return (
                 <div key={data._id} onClick={() => handleNavigate(data._id)}>
-                  {!array || array.length === 0 ? (
-                    "There Are Currently No Blogs On This Subject"
-                  ) : (
-                    <BlogCard {...data} />
-                  )}
+                  <BlogCard {...data} />
                 </div>
               );
             })}
+
+          {blogsList.filter((val) => {
+            if (selectedCategory === "All") {
+              return val;
+            } else if (
+              val.category
+                .toLowerCase()
+                .includes(selectedCategory.toLowerCase())
+            ) {
+              return val;
+            }
+          }).length === 0 && (
+            <p style={{ margin: "auto" }}>Currently no Blogs on this Subject</p>
+          )}
         </div>
       </div>
     </StyledLanding>

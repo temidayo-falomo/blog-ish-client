@@ -15,5 +15,7 @@ export const StyledLanding = styled.div`
     flex-wrap: wrap;
     align-items: flex-start;
     width: 95%;
+    align-items: center;
+    overflow: auto;
   }
 `;
